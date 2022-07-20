@@ -1,0 +1,109 @@
+symbol,description,value,notes,source
+pa1,"Probability of an asymptomatic 
+infection with no prior immunity",0.1,"Value obtained from a 
+simulation study which simulated probability of clinical infection in the range (80,100)",https://wellcomeopenresearch.org/articles/4-62/v1
+gamma,"1/Latent period 
+of infection",0.56,"This paper quotes the onset 
+of infection to be 10-15 days so 12.5 days is used","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780957/#:~:text=vivax%20malaria%2C%20strains%20from%20tropical,8%2D12%20months%20after%20infection) "
+pa2,"Probability of an asymptomatic 
+infection upon re-infection ",0.673,Taken as the percentage of all P. vivax infected individuals that were and remained asymptomatic throughout 2 cross-sectional household surveys in Brazil,"https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-018-2787-7
+"
+pa3,Probability of treatment seeking if clinically infected,0.525,"Observed and predicted treatment
+seeking rate using national-level predictions. Taken as the midpoint of Venezuela (50-55%)for the ""any treatment"" seeking map",https://malariajournal.biomedcentral.com/articles/10.1186/s12936-015-1048-x/figures/3 
+tau1,Rate of treatment seeking (1/average number of days to seek treatment since symptoms began),1.4,"Taken as the mean number of days 
+to consultation for a P. vivax infected individual",https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8453994/ 
+tau2,Rate of loss of symptoms from clinical infection to asymptomatic infection ,0.35,"Taken as the 1/ average duration 
+of symptoms in an untreated clinical infection. Obtained from a simulation study (the first attached source) which simulated in the range (2,60) ","https://wellcomeopenresearch.org/articles/4-62/v1
+
+https://pubmed.ncbi.nlm.nih.gov/18141389/  
+
+https://evolve.elsevier.com/cs/product/9781437719826?role=student  
+"
+phyp1,Probability of recovery with hypnozoites following PQ+CQ treatment,0.3,Assumed from an expert opinion presented in this paper by Michael T. White. The efficacy value includes the effect of poor adherence to treatment plan,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6097992/
+tau3,Rate of recovery following asymptomatic infection with no treatment (1/average number of days to recover since symptoms began),0.05385,"Taken as the 1/ average duration 
+of symptoms in an untreated symptomatic infection. Obtained from a simulation study (the first attached source) which simulated in the range (60,200)","https://wellcomeopenresearch.org/articles/4-62/v1
+
+https://evolve.elsevier.com/cs/product/9781437719826?role=student   
+
+https://pubmed.ncbi.nlm.nih.gov/29398388/
+
+https://malariajournal.biomedcentral.com/articles/10.1186/s12936-016-1224-7
+
+https://play.google.com/store/books/details/Chemotherapy_Proceedings_of_the_7th_International_?id=UwclBQAAQBAJ&hl=af&gl=JP "
+tau4,Rate of loss of protection against reinfection following 3 days of CQ treatment,0.16667,"Taken as 1/ the remaining 
+prophylatic period of CQ following the loss of infectiousness (37 days). An individual is protected against reinfection for this period ",https://malariajournal.biomedcentral.com/articles/10.1186/s12936-017-1925-6 
+tau5,Rate of relapse,0.13208,"1/average number of days 
+taken to relapse following end of treatment plan","https://www.medrxiv.org/content/10.1101/2022.04.19.22274042v1
+"
+pa7,Probability of asymptomatic infection if relapsing,0.71,"Taken as the percentage 
+of all recurrent P.vivax infections that occurred within a year which were asymptomatic",https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3030575/
+pa8,"Probability of relapse if 
+recovered with hypnozoites",0.2756,"Taken as the percentage of P. vivax infected individuals that re-presented with P. vivax within 30 days of any dose of PQ (no PQ, low dose PQ, high dose PQ). Any dose group was used instead of just the low dose PQ group since in the model, those who do not receive treatment can also relapse ",https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7657498/ 
+dhyp,Rate of death of hypnozoites ,0.03004,"1/average number of 
+days for a hypnozoite to die",https://www.medrxiv.org/content/10.1101/2022.04.19.22274042v1.supplementary-material?versioned=true
+rho,Rate of loss of immunity following recovery if not re-infected,0.01923,"Value obtained from a 
+simulation study which simulated immunity in the range (0.5,10) years",https://wellcomeopenresearch.org/articles/4-62/v1
+sens,Test sensitivity ,0.94931,"Taken as the weighted mean
+of microscopy and RDT test
+sensitivity using available
+data on proportion of
+infections diagnosed using
+microscopy or RDT testing.
+The available data on
+diagnostic methods shows
+91.16% of tests were microscopy
+(test sens =0.957) and 8.84%
+were RDT (test sens=0.87) so
+test sensitivity was taken to
+be 0.9116*(0.957) + 0.0884*
+(0.87) = 0.94031",https://www.scielo.br/j/bjmbr/a/P6Px9tWHLmYwx4w9QswHMVw/?format=pdf&lang=en 
+tau6,Importation rate,0.0000091,Assumed using naïve model fitting methods. This rate to be simulated within an appropiate range using  bayesian model calibration techniques,
+z1,Proportion of imported individuals that are clinical,0.327,Taken as (1-pa2) since we assume that imported individuals have probabilities of being asymptomatic and clinical equal to the probabilities of asymptomatic and clinical infection upon reinfection. This is since imported individuals are likely coming from highly endemic regions such as Bolivar and have thus likely been previously infected,
+z2,Proportion of imported individuals that are asymptomatic,0.673,Taken as pa2 since we assume that imported individuals have probabilities of being asymptomatic and clinical equal to the probabilities of asymptomatic and clinical infection upon reinfection. This is since imported individuals are likely coming from highly endemic regions such as Bolivar and have thus likely been previously infected,
+LLIN_use,Probability of sleeping under a net,0.231,Taken as the average proportion of individuals who slept under a net the previous night in the study,"https://malariajournal.biomedcentral.com/articles/10.1186/s12936-019-2735-9/tables/4
+"
+LLIN_eff,Effectiveness of LLIN reducing infectious bites ,0.56,Taken as the overall risk reduction for reducing malarira by LLIN use,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5877091/ 
+no_cov,Number of people who sleep under one LLIN net,1,"Master plan for strengthening the HIV, tuberculosis and malaria response in the Bolivarian Republic of Venezuela from a public health perspective - 2018",
+w,"Human feeding rate
+per mosquito per week",1.47,This paper quotes 0.21 bites per day so this value is scaled by a factor of 7 to get in terms of weeks ,"https://royalsocietypublishing.org/doi/full/10.1098/rspb.2016.0048
+"
+x,"Transmission efficacy from
+mosquito to human",0.625,Taken as the proportion of infected individuals out of the total number of individuals challenged with one bite,https://www.nature.com/articles/ncomms1107
+y,"Transmission efficacy from
+human to mosquito",0.44,Taken as the proportion of infected subjects which led to infection in mosquitos,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3752813/
+m,Density of mosquitos,1,Assumed using naïve model fitting methods,
+mu_m,Death rate of mosquitos,0.7,"This paper quotes a death rate 
+of 0.1 per day so this has been scaled by a factor of 7 to get in terms of weeks",https://global.oup.com/academic/product/infectious-diseases-of-humans-9780198540403?cc=za&lang=en&
+gamma_m,Latent period in mosquitos,0.77778,"1/ average number of days for 
+a mosquito to become infectious following infection with P. vivax",https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3728673/
+t1,Importation switch,1,"Switch to turn on and off importation
+ in the model",
+ptrans1,Scaling factor for FOI applied due to uncertainty in many of transmission parameters,1.49249,"To be determined more robustly
+during model fitting",
+zeta1,"Relative infectivity of treated
+patients",0,"It was found after 3 days of CQ treatment
+ in the study, these individuals were not infectious",https://www.jci.org/articles/view/134923
+zeta2,"Relative infectivity of asymptomatic
+patients",0.03463,"Taken as the infectivity of 
+asymptomatic individuals to An. Aquasalis over the infectivity of symptomatic individuals ",https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-018-2749-0#Tab2
+tau7,"Loss of infectiousness once 
+treatment starts",2.33333,Taken as 1/3 days (scaled into weeks) since CQ treatment is 3 days long and this is when they lose infectiousness,
+tau8,"Prophylatic period for 
+chloroquine if non-infected",0.15556,"Taken as the mean quoted between each paper. In the first paper, the middle value
+between 20 and 60 days - 40 days - is used. In the second paper, 1-2 months is quoted and so 45 days is used. The third paper quotes 45-55 so 50 days is used. This represents the period that an individual is protected against infection due to MDA treatment (in particular CQ treatment)","https://malariajournal.biomedcentral.com/articles/10.1186/s12936-019-3072-8
+https://link.springer.com/article/10.2165/00003088-199630040-00002 
+https://www.sciencedirect.com/topics/medicine-and-dentistry/deethylchloroquine"
+tau9,"Rate of recovery following TQ
+treatment (1/length of TQ treatment plan)",7,"TQ is a single dose so taken as 
+1 day",
+g6sens,G6PD test sensitivity ,0.96,,https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002992 
+phyp2,"Probability of recovery with 
+hypnozoites following TQ+CQ treatment",0.108,,https://www.sciencedirect.com/science/article/pii/S0140673613625684?casa_token=yoKzcjanTiMAAAAA:xVtoyqMhWOUL3-kZANm-1VtyKQa88adZ-KbpwdjTqCP4QDmOGY1KAfCqYKxqk7cX87CCU9sk 
+gd,G6PD deficiency prevalence,0.06,"Taken as the prevalence from a
+study in Cajigal, Sucre in Venezuela",https://malariajournal.biomedcentral.com/articles/10.1186/s12936-015-1069-5
+gd_det,"Proportion of population
+that are detected to be g6pd deficient ",0.0576,Taken as g6sens*gd,
+t3,MDA switch delete,1,,
+mcov,MDA target coverage,0.5,Varied throughout experiments,
+ptrans2,"Rate/probability of 
+relapse scaling factor",0.43591,Varied throughout experiments,
